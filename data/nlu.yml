@@ -1,0 +1,232 @@
+version: "3.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - ciao
+    - salve
+    - buongiorno
+    - buon pomeriggio
+    - buonasera
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - how are you
+    - how are you doing
+    - how do you do
+    - good afternoon
+    - whatsup
+    - yo
+
+
+- intent: goodbye
+  examples: |
+    - a presto
+    - ci vediamo
+    - addio
+    - ti saluto
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+
+- intent: about
+  examples: |
+    - [università](about_name)
+    - [univpm](about_name)
+    - [college name](about_name)
+    - Come si chiama [l'università](about_name)
+    - Che nome ha [l'università](about_name)
+    
+    - what is the [name of the college](about_name)
+    
+    - when was the [college found](about_found)
+
+    - [rettore](about_chancellor)
+    - [chancellor](about_chancellor) of college
+    - who is the [chancellor](about_chancellor)
+
+    - who is the [dean](about_dean)
+    - [dean](about_dean) name
+   
+    
+
+- intent: location
+  examples: |
+    - Quale è l'indirizzo dell'università
+    - Come posso arrivare in sede
+    - sede
+    - dove è la sede
+    - dove si trova
+    - luogo
+    - come ci arrivo
+    - indirizzo
+    - posto
+    - Location of the college
+    - how do I get to the college
+    - Where is the college
+    - Address of college
+    - university address
+    - where is university
+
+- intent: courses
+  examples: |
+    - cosa posso studiare
+    - quale è la proposta
+    - lista dei corsi
+    - che cosa si studia
+    - Quali sono i corsi offerti
+    - What are offered here
+    - List of courses
+    - what can i study in your college
+    - What are the courses offered
+    - quali sono i corsi universitari
+    - quali sono gli insegnamenti
+    - che esami ci sono
+    - su cosa vertono le lezioni
+    - su cosa vertono le esercitazioni
+    - offerta formativa
+
+- intent: course_info
+  examples: |
+    - [cse](cse)
+    - [ece](ece)
+    - [mech](mech)
+    
+    - [ingegneria informatica](cse)
+    - [informatica](cse)
+    - [computer science](cse)
+    - [computer engineering](cse)
+    - [Ingegneria dell'informazione](cse)
+    - [computer science and engineering](cse)
+
+    - [ingegneria elettronica](ece)
+    - [elettronica](ece)
+    - [ingegneria delle telecomunicazioni](ece)
+    - [telecomunicazioni](ece)
+    - [electronics](ece)
+    - [electronics and communication](ece)
+
+    - [ingegneria meccanica](mech)
+    - [meccanica](mech)
+    - [ingegneria dei materiali](mech)
+    - [mechanical engineering](mech)
+    - [mechanical] (mech)
+    
+    - descrizione del corso di [cse](cse)
+    - descrizione del corso di [ece](ece)
+    - descrizione del corso di [mech](mech)
+
+    - dimmi qualcosa su [cse](cse)
+    - dimmi qualcosa su [ece](ece)
+    - dimmi qualcosa su [mech](mech)
+
+    - informazioni sul corso di [cse](cse)
+    - informazioni sul corso di [ece](ece)
+    - informazioni sul corso di [mech](mech)
+
+    - vorrei delle informazioni su [cse](cse)
+    - vorrei delle informazioni su [ece](ece)
+    - vorrei delle informazioni su [mech](mech)
+
+    - tell me more about [cse](cse)
+    - tell me more about [ece](ece)
+    - tell me more about [mech](mech)
+
+    - syllabus for [cse](cse)
+    - syllabus for [ece](ece)
+    - syllabus for [mech](mech)
+
+    
+- intent: fees
+  examples: |
+    - tasse universitarie
+    - quali sono i costi
+    - come procedere con il pagamento
+    - quali sono i pagamenti
+    - quanto ammonta la retta annuale
+    - quanto costa iscriversi
+    - retta annuale da pagare
+    - quali sono le spese
+    - how much does it cost
+    - What is the college fees
+    - How much does this college cost
+    - What are the expenses
+    - How much money do i need to attend this college
+
+- intent: placement
+  examples: |
+    - quali sono gli sbocchi lavorativi
+    - quali sono gli impieghi futuri
+    - prospettive future
+    - post-laurea
+    - si trova lavoro dopo la laurea
+    - what companies come for placements
+    - who all attend the hiring process
+    - placements
+    - which dream companies came for placement process
+    - Placement prospects
+    - quali sono gli sbocchi futuri
+    - prospettive di employment
+    - prospettive di placing
+    - quale è la induction
+    - piazzamento della figura lavorativa
+    - che lavoro posso fare
+    - cerco lavoro
+    - sto cercando lavoro
+  
+
+- synonym: dean
+  examples: |
+    - presidente
+    - capo
+    - responsabile
+    - dirigente
+    - referente
+    - principal
+
+- synonym: cse
+  examples: |
+    - Ingegneria dell'informazione
+    - ingegneria informatica    
+    - informatica
+    - computer science
+    - computer science and engineering
+    - computer engineering
+
+- synonym: ece
+  examples: |
+    - Ingegneria elettronica
+    - elettronica
+    - telecomunicazioni
+    - electronics and communication
+    - electronics
+    - ingegneria delle telecomunicazioni
+
+- synonym: mech
+  examples: |
+    - Ingegneria meccanica
+    - meccanica
+    - mechanical engineering
+    - mechanical
+    - ingegneria dei materiali
+
+- synonym: chancellor
+  examples: |
+    - rettore

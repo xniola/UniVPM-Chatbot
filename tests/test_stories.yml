@@ -1,0 +1,92 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### If you want to learn more, please see the docs: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+- story: informazioni_corsi
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Quali sono i corsi
+    intent: about
+  - action: utter_courses
+
+
+- story: informazioni_ece
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Dimmi qualcosa su [ece]{"entity": "ece"}
+    intent: course_info
+  - action: utter_ece
+
+- story: informazioni_cse
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Dimmi qualcosa su [cse]{"entity": "cse"}
+    intent: course_info
+  - action: utter_cse
+
+- story: informazioni_mech
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Dimmi qualcosa su [mech]{"entity": "mech"}
+    intent: course_info
+  - action: utter_mech
+
+- story: informazioni_location
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Quale è l'indirizzo dell'università
+    intent: location
+  - action: utter_location
+
+- story: informazioni_responsabile
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Chi è il [responsabile]{"entity": "dean"}
+    intent: about
+  - action: utter_dean_name
+
+- story: informazioni_rettore
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Chi è il [rettore]{"entity": "chancellor"}
+    intent: about
+  - action: utter_chancellor_name
+
+- story: fees
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      tasse universitarie
+    intent: fees
+  - action: utter_fees

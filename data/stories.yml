@@ -1,0 +1,147 @@
+version: "3.0"
+
+stories:
+
+- story: general path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about
+    entities:
+    -  about_name
+  - action: utter_name_college
+  - intent: about
+    entities:
+    - about_dean
+  - action: utter_dean_name
+  - intent: about
+    entities:
+    - about_chancellor
+  - action: utter_chancellor_name
+
+- story: ask college name path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about
+    entities:
+    - about_name
+  - action: utter_name_college
+
+- story: ask dean name path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about
+    entities:
+    - about_dean
+  - action: utter_dean_name
+
+- story: ask chancellor name path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: about
+    entities:
+    - about_chancellor
+  - action: utter_chancellor_name
+
+- story: greet path
+  steps:
+  - intent: greet
+  - action : utter_greet
+
+- story: ask location
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: location
+  - action: utter_location
+
+
+- story: courses
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: courses
+  - action: utter_courses
+
+- story: courses and ask cse course
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: courses
+  - action: utter_courses
+  - intent: course_info
+    entities:
+    - cse
+  - action: utter_cse
+
+- story: ask cse course
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: course_info
+    entities:
+    - cse
+  - action: utter_cse
+
+- story: courses and ask ece course
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: courses
+  - action: utter_courses
+  - intent: course_info
+    entities:
+    - ece
+  - action: utter_ece
+
+- story: ask_courses
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: course_info
+    entities:
+    - ece
+  - action: utter_ece
+
+- story: ask_courses
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: courses
+  - action: utter_courses
+  - intent: course_info
+    entities:
+    - mech
+  - action: utter_mech
+
+- story: ask_courses
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: course_info
+    entities:
+    - mech
+  - action: utter_mech
+
+- story: ask_placement
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: placement
+  - action: utter_placement
+
+- story: fallback story
+  steps: 
+  - intent: out_of_scope
+  - action: utter_unclear
+
+- story: fees
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: fees
+  - action: utter_fees
+

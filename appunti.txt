@@ -1,0 +1,4 @@
+nlu.yml --> Ci sono gli intent che il bot deve riconoscere
+rules.yml --> regole che il bot rispetta per rispondere bene
+stories.yml --> Ci sono gli step di tutte le storie, come rispondere una volta riconosciuto l'intent dell'utente
+domanin.yml --> Ci sono le risposte del bot. Raccoglie inoltre in liste ciò che riguarda le actions(risposte), intent e entities.

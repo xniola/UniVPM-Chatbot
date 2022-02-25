@@ -1,0 +1,75 @@
+version: "3.0"
+
+intents:
+  - goodbye
+  - greet
+  - about
+  - location
+  - fees
+  - courses
+  - placement
+  - course_info
+
+entities:
+  - about_name
+  - about_found
+  - about_dean
+  - about_chancellor
+  - cse
+  - ece 
+  - mech
+
+actions:
+  - utter_goodbye
+  - utter_greet
+  - utter_name_college
+  - utter_dean_name
+  - utter_chancellor_name
+  - utter_courses
+  - utter_location
+  - utter_fees
+  - utter_cse
+  - utter_ece
+  - utter_mech
+  - utter_placement
+  - utter_unclear
+
+responses:
+  utter_greet:
+    - text: "Ciao, sono PuzianoLilli! il chatbot che ti fornisce informazioni su ingnegnria UniVPM!"
+
+  utter_name_college:
+    - text: "Il nome dell'università è Università Politecnica delle Marche"
+  
+  utter_dean_name:
+    - text: "Il responsabile è il professore Domenico Ursino perchè è il più simpatico"
+  
+  utter_chancellor_name:
+    - text: "Il rettore dell'università è Gian Luca Gregori"
+  
+  utter_unclear:
+    - text: "Scusa non ho capito ciò che hai detto"
+  
+  utter_location:
+    - text: "UniVPM ha sede principale in Ancona. Ecco per te il link di Google Maps: https://www.google.it/maps/search/ingegneria+univpm/@43.5869035,13.4990644,14z"
+  
+  utter_fees:
+    - text: "Le tasse universitarie variano in base al tuo ISEE. Per scoprire di più: https://www.univpm.it/Entra/Didattica/5_passi_per_iscriverti_a_UNIVPM/Tasse_e_contributi"
+  
+  utter_courses:
+    - text: "Sono predisposto per fornirti informazioni riguardo i corsi di laurea magistrale in Ingegneria presso UniVPM. Vieni qua: https://www.ingegneria.univpm.it/"
+
+  utter_cse:
+    - text: "Ingegneria Informatica è un corso in cui si studiano tematiche attuali sulle tecnologie dell'informazione. per scoprire di più: https://www.univpm.it/Entra/Offerta_formativa_1/Corso_di_laurea_triennale_in_Ingegneria_Informatica_e_dellAutomazione_1"
+  
+  utter_ece:
+    - text: "Ingegneria elettronica è un campo emergente al giorno d'oggi. Puoi visualizzare il nostro syllabus qui: https://www.univpm.it/Entra/Offerta_formativa_1/Corso_di_laurea_triennale_in_Ingegneria_Elettronica_1"
+  
+  utter_mech: 
+    - text: "Ingegneria Meccanica è il corso adatto se ti piacciono le brum brum o cose sui materiali. Vieni ad esplorarla: https://www.univpm.it/Entra/Offerta_formativa_1/Corso_di_laurea_triennale_in_Ingegneria_Meccanica_1"
+  
+  utter_placement:
+    - text: "Il Job Placement è la struttura preposta all'accompagnamento al lavoro di studenti e laureati. Per ulteriori informazioni: https://www.univpm.it/Entra/Universita_Politecnica_delle_Marche_Home/Job_Placement"
+
+  utter_goodbye:
+    - text: "Bye!"
