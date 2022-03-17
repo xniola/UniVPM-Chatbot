@@ -4,9 +4,17 @@ nlu:
 - intent: greet
   examples: |
     - ciao
+    - saluti
+    - we
+    - welà
+    - weilà
     - salve
+    - hola
     - buongiorno
+    - buon giorno
+    - buonpomeriggio
     - buon pomeriggio
+    - buona sera
     - buonasera
     - hey
     - hello
@@ -15,9 +23,6 @@ nlu:
     - good morning
     - good evening
     - moin
-    - hey there
-    - let's go
-    - hey dude
     - goodmorning
     - goodevening
     - how are you
@@ -34,6 +39,8 @@ nlu:
     - ci vediamo
     - addio
     - ti saluto
+    - arrivederci
+    - grazie ciao
     - cu
     - good by
     - cee you later
@@ -92,6 +99,8 @@ nlu:
     - lista dei corsi
     - che cosa si studia
     - Quali sono i corsi offerti
+    - che corsi ci sono
+    - quale è l'offerta formativa
     - What are offered here
     - List of courses
     - what can i study in your college
@@ -127,7 +136,7 @@ nlu:
     - [meccanica](mech)
     - [ingegneria dei materiali](mech)
     - [mechanical engineering](mech)
-    - [mechanical] (mech)
+    - [mechanical](mech)
     
     - descrizione del corso di [cse](cse)
     - descrizione del corso di [ece](ece)
@@ -153,9 +162,14 @@ nlu:
     - syllabus for [ece](ece)
     - syllabus for [mech](mech)
 
+- intent: orari
+  examples: |
+    - orari di 
     
 - intent: fees
   examples: |
+    - vorrei delle informazioni sulle tasse universitarie
+    - dammi delle info sui costi
     - tasse universitarie
     - quali sono i costi
     - come procedere con il pagamento
@@ -172,9 +186,11 @@ nlu:
 
 - intent: placement
   examples: |
+    - situazione lavorativa post-laurea
     - quali sono gli sbocchi lavorativi
     - quali sono gli impieghi futuri
     - prospettive future
+    - prospettive lavorative
     - post-laurea
     - si trova lavoro dopo la laurea
     - what companies come for placements
@@ -190,6 +206,13 @@ nlu:
     - che lavoro posso fare
     - cerco lavoro
     - sto cercando lavoro
+
+- intent: piano_studi_informatica
+  examples: |
+    - Dimmi il piano di studi per  [ingegneria informatica](cse)
+    - Offerta formativa [ingegneria informatica](cse)
+    - Lista dei corsi di [ingegneria informatica](cse)
+    - Programma del corso di [ingegneria informatica](cse)
   
 
 - synonym: dean

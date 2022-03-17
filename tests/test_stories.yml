@@ -13,7 +13,6 @@ stories:
     intent: about
   - action: utter_courses
 
-
 - story: informazioni_ece
   steps:
   - user: |
@@ -24,6 +23,17 @@ stories:
       Dimmi qualcosa su [ece]{"entity": "ece"}
     intent: course_info
   - action: utter_ece
+
+- story: informazioni_ece_sinonimo
+  steps:
+  - user: |
+      Ciao
+  intent: greet
+- action: utter_greet
+- user: |
+    Dimmi qualcosa su [ingegneria elettronica]{"entity": "ece"}
+  intent: course_info
+- action: utter_ece
 
 - story: informazioni_cse
   steps:
@@ -36,6 +46,17 @@ stories:
     intent: course_info
   - action: utter_cse
 
+- story: informazioni_cse_sinonimo
+  steps:
+  - user: |
+      Ciao
+  intent: greet
+- action: utter_greet
+- user: |
+    Dimmi qualcosa su [ingegneria informatica]{"entity": "cse"}
+  intent: course_info
+- action: utter_cse
+
 - story: informazioni_mech
   steps:
   - user: |
@@ -46,6 +67,17 @@ stories:
       Dimmi qualcosa su [mech]{"entity": "mech"}
     intent: course_info
   - action: utter_mech
+
+- story: informazioni_mech_sinonimo
+  steps:
+  - user: |
+      Ciao
+  intent: greet
+- action: utter_greet
+- user: |
+    Dimmi qualcosa su [ingegneria meccanica]{"entity": "mech"}
+  intent: course_info
+- action: utter_mech
 
 - story: informazioni_location
   steps:
@@ -90,3 +122,26 @@ stories:
       tasse universitarie
     intent: fees
   - action: utter_fees
+
+
+- story: piano_studi_informatica
+  steps:
+  - user: |
+      Buonasera
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Offerta formativa di ingegneria informatica
+    intent: piano_studi_informatica
+  - action: action_piano_studi_informatica
+  
+- story: placement
+  steps:
+  - user: |
+      salve
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Quali sono le prospettive lavorative dopo la laurea
+    intent: placement
+  - action: utter_placement

@@ -145,3 +145,9 @@ stories:
   - intent: fees
   - action: utter_fees
 
+- story: piano studi informatica
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: piano_studi_informatica
+    - action: action_piano_studi_informatica
