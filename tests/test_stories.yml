@@ -57,6 +57,17 @@ stories:
   intent: course_info
 - action: utter_cse
 
+- story: informazioni_gestionale
+  steps:
+  - user: |
+      Ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+    Dammi info su [ingegneria gestionale]{"entity": "gestionale"}
+  intent: course_info 
+  - action: utter_gestionale
+
 - story: informazioni_mech
   steps:
   - user: |
@@ -122,18 +133,6 @@ stories:
       tasse universitarie
     intent: fees
   - action: utter_fees
-
-
-- story: piano_studi_informatica
-  steps:
-  - user: |
-      Buonasera
-    intent: greet
-  - action: utter_greet
-  - user: |
-      Offerta formativa di ingegneria informatica
-    intent: piano_studi_informatica
-  - action: action_piano_studi_informatica
   
 - story: placement
   steps:
@@ -145,3 +144,43 @@ stories:
       Quali sono le prospettive lavorative dopo la laurea
     intent: placement
   - action: utter_placement
+  
+- story : orario lezioni
+  steps:
+  - user: |
+      Buongiorno
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Dimmi gli orari delle lezioni
+    intent: orari
+  - action: utter_orari
+
+- story: prof simpatico
+  steps:
+  - user: |
+      Weilà
+    intent: greet
+  - action: utter_greet
+  - user: |
+      Chi è il più simpatico?
+    intent: simpatia
+  - action: utter_simpatia
+
+- story: fail
+  steps:
+  - user: |
+      kaduhjfkasjvkajdvb
+    intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: meteo
+  steps:
+  - user: |
+      ciao
+    intent: greet
+  - action: utter_greet
+  - user: |
+      come è il tempo da te?
+    intent: meteo
+  - action: action_meteo

@@ -1,54 +1,156 @@
 version: "3.0"
 
+config:
+    store_entities_as_slots: true
+session_config:
+    session_expiration_time: 120
+    carry_over_slots_to_new_session: true
+
 intents:
   - goodbye
   - greet
-  - about
+  - about:
+      use_entities: true
   - location
   - fees
   - courses
   - placement
-  - course_info
+  - simpatia
+  - course_info:
+      use_entities: true
+  - piano_studi_informatica
+  - orari
+  - meteo
+
 
 entities:
   - about_name
-  - about_found
   - about_dean
   - about_chancellor
   - cse
   - ece 
   - mech
+  - civile
+  - edile
+  - gestionale
+  - biomedica
+  - environmental
+  - course
+
+slots:
+  course: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: course
+
+  about_name: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: about_name
+
+  about_dean: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: about_dean
+
+  about_chancellor: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: about_chancellor
+
+  cse: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: cse
+  
+  ece: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: ece
+
+  mech: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: mech
+
+  civile: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: civile
+
+  edile: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: edile
+  
+  gestionale: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: gestionale
+
+  biomedica: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: biomedica
+
+  environmental: 
+    type: text
+    mappings: 
+    - type: from_entity 
+      entity: environmental
 
 actions:
-  - utter_goodbye
   - utter_greet
   - utter_name_college
   - utter_dean_name
   - utter_chancellor_name
-  - utter_courses
   - utter_location
   - utter_fees
+  - utter_courses
   - utter_cse
   - utter_ece
   - utter_mech
+  - utter_civile
+  - utter_edile
+  - utter_gestionale
+  - utter_biomedica
+  - utter_environmental
   - utter_placement
-  - utter_unclear
+  - utter_orari
+  - utter_simpatia
+  - utter_goodbye
+  - utter_out_of_scope
+  - action_meteo
 
 responses:
   utter_greet:
-    - text: "Ciao, sono PuzianoLilli! il chatbot che ti fornisce informazioni su ingnegnria UniVPM!"
+    - text: "Ciao, sono PoliMarchetto! il chatbot di che ti fornisce informazioni su ingnegnria UniVPM!"
 
   utter_name_college:
     - text: "Il nome dell'università è Università Politecnica delle Marche"
+    - text: "L'università ha come sigla UNIVPM e sta per Università Politecnica delle Marche"
   
   utter_dean_name:
     - text: "Il responsabile è il professore Domenico Ursino perchè è il più simpatico"
+
+  utter_simpatia:
+    - text: "Il più simpatico è il prof. Domenico Ursino sa dubbio!"
+    - text: "Secondo i miei calcoli il prof. Domenico Ursino è un gran bel simpaticone"
   
   utter_chancellor_name:
     - text: "Il rettore dell'università è Gian Luca Gregori"
-  
-  utter_unclear:
-    - text: "Scusa non ho capito ciò che hai detto"
+    - text: "Il nome del magnifico rettore è Gian Luca Gregori"
   
   utter_location:
     - text: "UniVPM ha sede principale in Ancona. Ecco per te il link di Google Maps: https://www.google.it/maps/search/ingegneria+univpm/@43.5869035,13.4990644,14z"
@@ -57,19 +159,58 @@ responses:
     - text: "Le tasse universitarie variano in base al tuo ISEE. Per scoprire di più: https://www.univpm.it/Entra/Didattica/5_passi_per_iscriverti_a_UNIVPM/Tasse_e_contributi"
   
   utter_courses:
-    - text: "Sono predisposto per fornirti informazioni riguardo i corsi di laurea magistrale in Ingegneria presso UniVPM. Vieni qua: https://www.ingegneria.univpm.it/"
+    - text: "Sono predisposto per fornirti informazioni riguardo i corsi di laurea magistrale in Ingegneria presso UniVPM. Vieni qua a scoprirli: https://www.ingegneria.univpm.it/offerta-formativa-2021"
+    - text: "Posso darti informazioni riguardo i corsi di laurea magistrale in Ingegneria presso UniVPM!, eccoli qua: https://www.ingegneria.univpm.it/offerta-formativa-2021"
 
   utter_cse:
-    - text: "Ingegneria Informatica è un corso in cui si studiano tematiche attuali sulle tecnologie dell'informazione. per scoprire di più: https://www.univpm.it/Entra/Offerta_formativa_1/Corso_di_laurea_triennale_in_Ingegneria_Informatica_e_dellAutomazione_1"
-  
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM12_LM_IA_20.pdf
+      text:  "Ingegneria Informatica e dell'Automazione è un corso in cui si studiano tematiche attuali sulle tecnologie dell'informazione. per scoprire di più: https://www.univpm.it/Entra/Offerta_formativa_1/Offerta_formativa_2/Corso_di_laurea_magistrale_in_Ingegneria_Informatica_e_dellAutomazione_1"
+
   utter_ece:
-    - text: "Ingegneria elettronica è un campo emergente al giorno d'oggi. Puoi visualizzare il nostro syllabus qui: https://www.univpm.it/Entra/Offerta_formativa_1/Corso_di_laurea_triennale_in_Ingegneria_Elettronica_1"
-  
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM11_LM_ELE_19.pdf
+      text: "Ingegneria Elettronica è un campo emergente al giorno d'oggi. Puoi visualizzare il nostro syllabus qui: https://www.univpm.it/Entra/Offerta_formativa_1/Offerta_formativa_2/Corso_di_laurea_magistrale_in_Ingegneria_Elettronica_1"
+    
   utter_mech: 
-    - text: "Ingegneria Meccanica è il corso adatto se ti piacciono le brum brum o cose sui materiali. Vieni ad esplorarla: https://www.univpm.it/Entra/Offerta_formativa_1/Corso_di_laurea_triennale_in_Ingegneria_Meccanica_1"
-  
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM09_LM_MECC_21.pdf
+      text: "Vieni a scoprire Ingegneria Meccanica: https://www.univpm.it/Entra/Offerta_formativa_1/Offerta_formativa_2/Corso_di_laurea_magistrale_in_Ingegneria_Meccanica_1"
+
+  utter_civile:
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM02_LM_CIV_21.pdf
+      text: "Ecco il dettaglio del programma formatica di Ingegneria Civile"
+
+  utter_edile:
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM03_LM_EDI_20.pdf
+      text: "Ecco il piano di Ingegneria Edile!"
+
+  utter_gestionale:
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM07_LMFS_GEST_21.pdf
+      text: "Ecco a te il piano per Ingegneria Gestionale"
+
+  utter_biomedica:
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM13_LM_BIO_21.pdf 
+      text: "Here we go with Biomedial Engineering! This course is in English"
+
+  utter_environmental:
+    - image: https://www.ingegneria.univpm.it/sites/www.ingegneria.univpm.it/files/ingegneria/guida_ingegneria/guida_2021_2022/pdf_270/IM14_LM_ENV_21.pdf
+      text: "Here we go with Environmental Engineering! This course is in English"
+
   utter_placement:
     - text: "Il Job Placement è la struttura preposta all'accompagnamento al lavoro di studenti e laureati. Per ulteriori informazioni: https://www.univpm.it/Entra/Universita_Politecnica_delle_Marche_Home/Job_Placement"
+    - text: "Abbiamo una sezione dedicata al Job Placement per il post-laurea. Ecco qua: https://www.univpm.it/Entra/Universita_Politecnica_delle_Marche_Home/Job_Placement"
 
+  utter_orari:
+    - text: "Gli orari delle lezioni di Ingegneria li puoi trovare qui: https://aule.univpm.it/lezioni/Orario/Ingegneria/2021-2022/index.html"
+    - text: "Ecco gli orari di Ingegneria: https://aule.univpm.it/lezioni/Orario/Ingegneria/2021-2022/index.html"
+  
   utter_goodbye:
-    - text: "Bye!"
+    - text: "Arrivederci!"
+    - text: "E' stato un piacere, ciao!"
+
+  utter_out_of_scope:
+    - text: "Non ho capito la tua richiesta :("
+    - text: "Non capisco, puoi ripetere?"
+    - text: "Scusa non ho capito ciò che hai detto"
+    - text: "Non mi è chiara la tua richiesta :("
+    - text: "Non ho capito"
+
+  

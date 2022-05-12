@@ -28,6 +28,13 @@ stories:
     - about_name
   - action: utter_name_college
 
+- story: ask college name short path
+  steps:
+  - intent: about
+    entities:
+    - about_name
+  - action: utter_name_college
+
 - story: ask dean name path
   steps:
   - intent: greet
@@ -37,10 +44,24 @@ stories:
     - about_dean
   - action: utter_dean_name
 
+- story: ask dean name short path
+  steps:
+  - intent: about
+    entities:
+    - about_dean
+  - action: utter_dean_name
+
 - story: ask chancellor name path
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: about
+    entities:
+    - about_chancellor
+  - action: utter_chancellor_name
+
+- story: ask chancellor name short path
+  steps:
   - intent: about
     entities:
     - about_chancellor
@@ -58,6 +79,10 @@ stories:
   - intent: location
   - action: utter_location
 
+- story: ask location short
+  steps:
+  - intent: location
+  - action: utter_location
 
 - story: courses
   steps:
@@ -66,10 +91,24 @@ stories:
   - intent: courses
   - action: utter_courses
 
+- story: courses short
+  steps:
+  - intent: courses
+  - action: utter_courses 
+
 - story: courses and ask cse course
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: courses
+  - action: utter_courses
+  - intent: course_info
+    entities:
+    - cse
+  - action: utter_cse
+
+- story: courses and ask cse course short
+  steps:
   - intent: courses
   - action: utter_courses
   - intent: course_info
@@ -86,6 +125,13 @@ stories:
     - cse
   - action: utter_cse
 
+- story: ask cse course short
+  steps:
+  - intent: course_info
+    entities:
+    - cse
+  - action: utter_cse
+
 - story: courses and ask ece course
   steps: 
   - intent: greet
@@ -97,7 +143,16 @@ stories:
     - ece
   - action: utter_ece
 
-- story: ask_courses
+- story: courses and ask ece course short
+  steps: 
+  - intent: courses
+  - action: utter_courses
+  - intent: course_info
+    entities:
+    - ece
+  - action: utter_ece
+
+- story: ask ece course
   steps: 
   - intent: greet
   - action: utter_greet
@@ -106,7 +161,7 @@ stories:
     - ece
   - action: utter_ece
 
-- story: ask_courses
+- story: courses and ask mech course
   steps: 
   - intent: greet
   - action: utter_greet
@@ -117,7 +172,7 @@ stories:
     - mech
   - action: utter_mech
 
-- story: ask_courses
+- story: ask mech course
   steps: 
   - intent: greet
   - action: utter_greet
@@ -125,6 +180,48 @@ stories:
     entities:
     - mech
   - action: utter_mech
+
+- story: ask mech course short
+  steps: 
+  - intent: course_info
+    entities:
+    - mech
+  - action: utter_mech
+
+- story: ask civile course
+  steps:
+  - intent: course_info
+    entities: 
+    - civile
+  - action: utter_civile
+
+- story: ask edile course
+  steps:
+  - intent: course_info
+    entities: 
+    - edile
+  - action: utter_edile
+
+- story: ask gestionale course
+  steps:
+  - intent: course_info
+    entities: 
+    - gestionale
+  - action: utter_gestionale
+
+- story: ask biomedica course
+  steps:
+  - intent: course_info
+    entities: 
+    - biomedica
+  - action: utter_biomedica
+
+- story: ask env course
+  steps:
+  - intent: course_info
+    entities: 
+    - environmental
+  - action: utter_environmental
 
 - story: ask_placement
   steps: 
@@ -136,7 +233,7 @@ stories:
 - story: fallback story
   steps: 
   - intent: out_of_scope
-  - action: utter_unclear
+  - action: utter_out_of_scope
 
 - story: fees
   steps:
@@ -145,9 +242,24 @@ stories:
   - intent: fees
   - action: utter_fees
 
-- story: piano studi informatica
+- story: orario lezioni
   steps:
     - intent: greet
     - action: utter_greet
-    - intent: piano_studi_informatica
-    - action: action_piano_studi_informatica
+    - intent: orari
+    - action: utter_orari
+
+- story: out_of_scope
+  steps:
+  - intent: out_of_scope
+  - action: utter_out_of_scope
+
+- story: simpatico
+  steps:
+  - intent: simpatia
+  - action: utter_simpatia
+
+- story: meteo
+  steps:
+  - intent: meteo
+  - action: action_meteo

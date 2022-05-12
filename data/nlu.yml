@@ -41,6 +41,8 @@ nlu:
     - ti saluto
     - arrivederci
     - grazie ciao
+    - me ne vado
+    - vado via
     - cu
     - good by
     - cee you later
@@ -60,19 +62,18 @@ nlu:
     - [college name](about_name)
     - Come si chiama [l'università](about_name)
     - Che nome ha [l'università](about_name)
-    
     - what is the [name of the college](about_name)
     
-    - when was the [college found](about_found)
-
+    - chi è il [rettore](about_chancellor)
     - [rettore](about_chancellor)
     - [chancellor](about_chancellor) of college
     - who is the [chancellor](about_chancellor)
 
+    - chi è il [dean](about_dean) del corso di laurea
+    - come si chiama il [dean](about_dean) del corso
     - who is the [dean](about_dean)
     - [dean](about_dean) name
    
-    
 
 - intent: location
   examples: |
@@ -92,10 +93,21 @@ nlu:
     - university address
     - where is university
 
+- intent: simpatia
+  examples: |
+    - Chi è il professore più simpatico
+    - Come si chiama il professore migliore
+
 - intent: courses
   examples: |
     - cosa posso studiare
     - quale è la proposta
+    - che cosa sai fare
+    - cosa puoi dirmi
+    - cosa sai
+    - che mi sai dire
+    - a cosa servi
+    - quale è il tuo scopo
     - lista dei corsi
     - che cosa si studia
     - Quali sono i corsi offerti
@@ -117,55 +129,111 @@ nlu:
     - [cse](cse)
     - [ece](ece)
     - [mech](mech)
-    
-    - [ingegneria informatica](cse)
-    - [informatica](cse)
-    - [computer science](cse)
-    - [computer engineering](cse)
-    - [Ingegneria dell'informazione](cse)
-    - [computer science and engineering](cse)
-
-    - [ingegneria elettronica](ece)
-    - [elettronica](ece)
-    - [ingegneria delle telecomunicazioni](ece)
-    - [telecomunicazioni](ece)
-    - [electronics](ece)
-    - [electronics and communication](ece)
-
-    - [ingegneria meccanica](mech)
-    - [meccanica](mech)
-    - [ingegneria dei materiali](mech)
-    - [mechanical engineering](mech)
-    - [mechanical](mech)
+    - [ingegneria civile](civile)
+    - [edile](edile)
+    - [ingegneria gestionale](gestionale)
+    - [ingegneria biomedica](biomedica)
+    - [environmental](environmental)
     
     - descrizione del corso di [cse](cse)
     - descrizione del corso di [ece](ece)
     - descrizione del corso di [mech](mech)
+    - descrizione del corso di [ingegneria civile](civile)
+    - descrizione del corso di [ingegneria edile](edile)
+    - descrizione del corso di [ingegneria gestionale](gestionale)
+    - descrizione del corso di [ingegneria biomedica](biomedica)
+    - descrizione del corso di [environmental](environmental)
 
     - dimmi qualcosa su [cse](cse)
     - dimmi qualcosa su [ece](ece)
     - dimmi qualcosa su [mech](mech)
+    - dimmi qualcosa su [ingegneria civile](civile)
+    - dimmi qualcosa su [ingegneria edile](edile)
+    - dimmi qualcosa su [ingegneria gestionale](gestionale)
+    - dimmi qualcosa su [ingegneria biomedica](biomedica)
+    - dimmi qualcosa su [environmental](environmental)
 
     - informazioni sul corso di [cse](cse)
     - informazioni sul corso di [ece](ece)
     - informazioni sul corso di [mech](mech)
+    - informazioni sul corso di [ingegneria civile](civile)
+    - informazioni sul corso di [ingegneria edile](edile)
+    - informazioni sul corso di [ingegneria gestionale](gestionale)
+    - informazioni sul corso di [ingegneria biomedica](biomedica)
+    - informazioni sul corso di [environmental](environmental)
 
     - vorrei delle informazioni su [cse](cse)
     - vorrei delle informazioni su [ece](ece)
     - vorrei delle informazioni su [mech](mech)
+    - vorrei delle informazioni su [ingegneria civile](civile)
+    - vorrei delle informazioni su [ingegneria edile](edile)
+    - vorrei delle informazioni su [ingegneria gestionale](gestionale)
+    - vorrei delle informazioni su [ingegneria biomedica](biomedica)
+    - vorrei delle informazioni su [environmental](environmental)
 
-    - tell me more about [cse](cse)
-    - tell me more about [ece](ece)
-    - tell me more about [mech](mech)
+    - Dimmi il piano di studi per [ingegneria informatica](cse)
+    - Dimmi il piano di studi per [ingegneria elettronica](ece)
+    - Dimmi il piano di studi per [ingegneria meccanica](mech)
+    - Dimmi il piano di studi per [ingegneria civile](civile)
+    - Dimmi il piano di studi per [ingegneria edile](edile)
+    - Dimmi il piano di studi per [ingegneria gestionale](gestionale)
+    - Dimmi il piano di studi per [ingegneria biomedica](biomedica)
+    - Dimmi il piano di studi per [environmental](environmental)
 
-    - syllabus for [cse](cse)
-    - syllabus for [ece](ece)
-    - syllabus for [mech](mech)
+    - Offerta formativa [ingegneria informatica](cse)
+    - Offerta formatica [ingegneria elettronica](ece)
+    - Offerta formatica [ingegneria meccanica](mech)
+    - Offerta formatica [ingegneria civile](civile)
+    - Offerta formatica [ingegneria edile](edile)
+    - Offerta formatica [ingegneria gestionale](gestionale)
+    - Offerta formatica [ingegneria biomedica](biomedica)
+    - Offerta formatica [environmental](environmental)
 
-- intent: orari
-  examples: |
-    - orari di 
-    
+    - Lista dei corsi di [ingegneria informatica](cse)
+    - Lista dei corsi di [ingegneria elettronica](ece)
+    - Lista dei corsi di [ingegneria meccanica](mech)
+    - Lista dei corsi di [ingegneria civile](civile)
+    - Lista dei corsi di [ingegneria edile](edile)
+    - Lista dei corsi di [ingegneria gestionale](gestionale)
+    - Lista dei corsi di [ingegneria biomedica](biomedica)
+    - Lista dei corsi di [environmental](environmental)
+
+    - Programma del corso di [ingegneria informatica](cse)
+    - Programma del corso di [ingegneria elettronica](ece)
+    - Programma del corso di [ingegneria meccanica](mech)
+    - Programma del corso di [ingegneria civile](civile)
+    - Programma del corso di [ingegneria edile](edile)
+    - Programma del corso di [ingegneria gestionale](gestionale)
+    - Programma del corso di [ingegneria biomedica](biomedica)
+    - Programma del corso di [environmental](environmental)
+
+    - informazioni su [informatica](cse)
+    - informazioni su [elettronica](ece)
+    - informazioni su [meccanica](mech)
+    - informazioni su [ingegneria civile](civile)
+    - informazioni su [ingegneria edile](edile)
+    - informazioni su [ingegneria gestionale](gestionale)
+    - informazioni su [ingegneria biomedica](biomedica)
+    - informazioni su [environmental](environmental)
+
+    - vorrei un pdf del piano di [automazione](cse)
+    - vorrei un pdf del piano di [elettronica](ece)
+    - vorrei un pdf del piano di [meccanica](mech)
+    - vorrei un pdf del piano di [ingegneria civile](civile)
+    - vorrei un pdf del piano di [ingegneria edile](edile)
+    - vorrei un pdf del piano di [ingegneria gestionale](gestionale)
+    - vorrei un pdf del piano di [ingegneria biomedica](biomedica)
+    - vorrei un pdf del piano di [ingegneria dell'ambiente](environmental)
+
+    - foglio formativo di [ingegneria informatica](cse)
+    - foglio formativo di [ingegneria elettronica](ece)
+    - foglio formativo di [ingegneria meccanica](mech)
+    - foglio formativo di [ingegneria civile](civile)
+    - foglio formativo di [ingegneria edile](edile)
+    - foglio formativo di [ingegneria gestionale](gestionale)
+    - foglio formativo di [ingegneria biomedica](biomedica)
+    - foglio formativo di [environmental engineering](environmental)
+
 - intent: fees
   examples: |
     - vorrei delle informazioni sulle tasse universitarie
@@ -206,16 +274,59 @@ nlu:
     - che lavoro posso fare
     - cerco lavoro
     - sto cercando lavoro
-
-- intent: piano_studi_informatica
+    
+- intent: orari
   examples: |
-    - Dimmi il piano di studi per  [ingegneria informatica](cse)
-    - Offerta formativa [ingegneria informatica](cse)
-    - Lista dei corsi di [ingegneria informatica](cse)
-    - Programma del corso di [ingegneria informatica](cse)
-  
+    - Quali sono gli orari delle lezioni
+    - Orari
+    - Orario
+    - Orario delle lezioni
+    - A che ora sono le lezioni
+    - Quando sono le lezioni
+    - class schedule
+    - lessons time
+    - timetables 
 
-- synonym: dean
+- intent: meteo
+  examples: |
+    - meteo
+    - condizioni metereologiche
+    - si sta bene oggi?
+    - piove in sede?
+    - come è il tempo in sede?
+    - come è il tempo all'università?
+    - sta piovendo laggiù?
+    - c'è il sole in Ancona?
+    - c'è la pioggia in sede?
+    - sapresti dirmi il meteo?
+    - devo mettermi il k-way?
+    - c'è vento in sede?
+    - spero che ci sia il sole oggi
+    - what is the wheather like?
+
+- intent: out_of_scope
+  examples: |
+    - blablabla
+    - sadasdasdasd
+    - hmmmmm
+    - hahahahhaha
+    - i'm sleeping
+    - what's the wheather update
+    - aeijfpvefvkèdlv
+    - lmlmlmlm
+    - uecwjeèqrpo
+    - aaaaaaaaaaaa
+    - pppppppppp
+    - kkkkkkk
+    - smdcspkèsj
+
+- lookup: course
+  examples: |
+    - ingegneria informatica
+    - ingegneria elettronica
+    - ingegneria meccanica
+
+- lookup: about_dean
   examples: |
     - presidente
     - capo
@@ -224,7 +335,7 @@ nlu:
     - referente
     - principal
 
-- synonym: cse
+- lookup: cse
   examples: |
     - Ingegneria dell'informazione
     - ingegneria informatica    
@@ -232,8 +343,10 @@ nlu:
     - computer science
     - computer science and engineering
     - computer engineering
+    - ingegneria dell'automazione
+    - automazione
 
-- synonym: ece
+- lookup: ece
   examples: |
     - Ingegneria elettronica
     - elettronica
@@ -242,7 +355,7 @@ nlu:
     - electronics
     - ingegneria delle telecomunicazioni
 
-- synonym: mech
+- lookup: mech
   examples: |
     - Ingegneria meccanica
     - meccanica
@@ -250,6 +363,30 @@ nlu:
     - mechanical
     - ingegneria dei materiali
 
-- synonym: chancellor
+- lookup: civile
+  examples: |
+    - Ingegneria civileion
+
+- lookup: edile
+  examples: |
+    - Ingegneria edile
+
+- lookup: gestionale
+  examples: |
+    - Ingegneria gestionale
+
+- lookup: biomedica
+  examples: |
+    - Ingegneria biomedica
+    - Biomedical engineering
+
+- lookup: environmental
+  examples: |
+    - Environmental engineering
+    - Ignegneria dell'ambiente
+    - Ingegneria ambientale
+    - Architettura
+
+- lookup: chancellor
   examples: |
     - rettore
